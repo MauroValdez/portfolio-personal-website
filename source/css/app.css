@@ -3,7 +3,7 @@
 
 /** =------=@note variables =------= **/
 :root {
-  --header--height: 3.5rem;
+  --header-height: 3.5rem;
 
   /** =------=@note colors =------= **/
   --first-color: hsl(207, 65%, 65%);
@@ -25,14 +25,14 @@
   /**.5rem = 8px --- 1rem = 16px **/
   --body-font: "Roboto", sans-serif;
   --title-font: "Lora", serif;
-  --biggest-font-size: 1.5rem;
-  --h1-font-size: 1.5rem;
-  --h2-font-size: 1.25rem;
-  --h3-fon-size: 1rem;
-  --normal-font-size: 0.938rem;
-  --small-font-size: 0.813rem;
-  --smaller-font-size: 0.75rem;
-  --tiny-font-size: 0.625rem;
+  --biggest-font-size: 2rem;
+  --h1-font-size: 1.75rem;
+  --h2-font-size: 1.5rem;
+  --h3-fon-size: 1.25rem;
+  --normal-font-size: 1rem;
+  --small-font-size: 0.938rem;
+  --smaller-font-size: 0.813rem;
+  --tiny-font-size: 0.75rem;
 
   /** =------=@note font weight =------= **/
   --font-medium: 500;
@@ -52,9 +52,9 @@
     --h2-font-size: 1.5rem;
     --h3-fon-size: 1.25rem;
     --normal-font-size: 1rem;
-    --small-font-size: .873rem;
-    --smaller-font-size: 0.813rem;
-    --tiny-font-size: 0.688rem;
+    --small-font-size: .9rem;
+    --smaller-font-size: 0.85rem;
+    --tiny-font-size: 0.7rem;
   }
 }
 
@@ -130,9 +130,81 @@ h1,h2,h3 {
   overflow: hidden; /*for animations*/
 }
 
-
-
-
-
-
-
+/** =------=@note header & nav =------= **/
+.header {
+  width: 100%;
+  position: fixed;
+  bottom: 2rem;
+  left: 0;
+  z-index: var(--z-fixed);
+}
+.nav {
+  height: calc( var(--header-height) + .5rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--body-color);
+  box-shadow: 0 4px 20px hsla(207, 24%, 35%, .1);
+  padding-inline: 1.5rem;
+  border-radius: 3rem;
+}
+.nav__logo,
+.nav__toggle,
+.nav__close {
+  color: var(--title-color);
+}
+.nav__logo {
+  font-family: var(--title-font);
+  font-weight: var(--font-medium);
+}
+.nav__toggle {
+  display: flex;
+  font-size: 1.75rem;
+  cursor: pointer;
+}
+@media screen and (max-width: 1023px) {
+  .nav__menu {
+    position: fixed;
+    width: 88%;
+    left: 0;
+    right: 0;
+    bottom: -60%;
+    margin: 0 auto;
+    background-color: var(--body-color);
+    box-shadow: 0 4px 20px hsla(207, 24%, 35%, .1);
+    padding: 2rem 1.5rem 5rem;
+    border-radius: 2rem;
+    transition: bottom .3s;
+  }
+}
+.nav__list {
+  grid-template-columns: repeat(3, max-content);
+  justify-content: center;
+  gap: 2rem 3rem;
+}
+.nav__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: .25rem;
+  font-size: var(--small-font-size);
+  color: var(--text-color-light);
+  transition: color .3s;
+}
+.nav__link:hover {
+  color: var(--title-color);
+}
+.nav__link i {
+  font-size: 2rem;
+}
+.nav__close {
+  position: absolute;
+  right: 2rem;
+  bottom: .7rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+/**@note show menu **/
+.show-menu {
+  bottom: 2rem;
+}
