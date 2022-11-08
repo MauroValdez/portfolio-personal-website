@@ -8,9 +8,7 @@ Home - Skills - Qualification - Services - Projects - Contact
 
 ========== HOME ==========
 .home__title
-Hi, I’m Chris <br>
-Frontend Developer <br>
-Based In Perú <br>
+Hi, I’m Chris <br> Frontend Developer <br> Based In Perú <br>
 
 .home__social
 https://www.linkedin.com/
@@ -114,7 +112,7 @@ Institute - Perú
 2019 - 2022
 
 
-Fontend Developer
+Frontend Developer
 Adobe - Spain
 2014 - 2019
 
