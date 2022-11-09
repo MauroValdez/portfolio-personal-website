@@ -8,6 +8,7 @@ function showMenu() {
         navToggle = document.querySelector('#nav-toggle'),
         navClose = document.querySelector('#nav-close'),
         navLink = document.querySelectorAll('.nav__link')
+        console.log("🚀 ~ file: app.js ~ line 11 ~ showMenu ~ navLink", navLink)
   
   if(navToggle) {
     navToggle.addEventListener('click', () => {
