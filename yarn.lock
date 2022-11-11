@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@emailjs/browser@^3.9.1":
+  version "3.9.1"
+  resolved "https://registry.yarnpkg.com/@emailjs/browser/-/browser-3.9.1.tgz#9d3824ba332e7441725d07a157cb913bc34a9928"
+  integrity sha512-8xhwTUoTDG5Tqjt8uC28zwmrwcjGhApXwUMyUaEmhhUVmCHhefetTlIR7Mlm4Ae8+Nm0+sC3oPe3K+BcR12QWA==
+
 "@esbuild/android-arm@0.15.13":
   version "0.15.13"
   resolved "https://registry.yarnpkg.com/@esbuild/android-arm/-/android-arm-0.15.13.tgz#ce11237a13ee76d5eae3908e47ba4ddd380af86a"

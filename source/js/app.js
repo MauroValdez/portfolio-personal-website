@@ -1,7 +1,9 @@
 import Swiper from 'swiper/bundle';
+import emailjs from "@emailjs/browser"
 
 document.addEventListener('DOMContentLoaded', () => {
   showMenu()
+  formEmail()
 })
 
 function showMenu() {
@@ -52,3 +54,44 @@ let swiperTestimonial = new Swiper(".testimonial__container", {
     prevEl: ".swiper-button-prev",
   }
 })
+
+function formEmail() {
+  const contactForm = document.querySelector('#contact-form'),
+        contactName = document.querySelector('#contact-name'),
+        contactEmail = document.querySelector('#contact-email'),
+        contactProject = document.querySelector('#contact-project'),
+        contactMessage = document.querySelector('#contact-message')
+  
+  const sendEmail = e => {
+    e.preventDefault();
+
+    if(contactName.value === '' || contactEmail.value === '' || contactProject.value === '') {
+      contactMessage.classList.remove('color-blue')
+      contactMessage.classList.add('color-red')
+
+      contactMessage.textContent = 'Write all the input fields 📩👎'
+
+      setTimeout(() => {
+        contactMessage.textContent = ''
+      }, 3000)
+    } else {
+      emailjs.sendForm('service_88mo7ty','template_ozbd55p','#contact-form','sAIJesc-yNkY0G7GP')
+        .then(() => {
+          contactMessage.classList.add('color-blue')
+          contactMessage.textContent = 'Message sent 📨👍'
+
+          setTimeout( () => {
+            contactMessage.textContent = ''
+          }, 3000)
+        }, (error) => {
+          alert('OOPS! SOMETHING HAS FAILED...', error)
+        })
+        
+        contactName.value = ''
+        contactEmail.value = ''
+        contactProject.value = ''
+    }
+  }
+
+  contactForm.addEventListener('submit', sendEmail)
+}
