@@ -18,6 +18,7 @@
     "imagemin-pngquant": "^9.0.2",
     "imagemin-webp": "^7.0.0",
     "remixicon": "^2.5.0",
+    "scrollreveal": "^4.0.9",
     "swiper": "^8.4.4"
   }
 }
